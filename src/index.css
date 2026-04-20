@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --color-primary: #dc2626;
+  --color-bg-vibrant: #fef2f2;
+  --color-border-vibrant: #fee2e2;
+  --radius-vibrant-card: 16px;
+  --radius-vibrant-item: 8px;
+  --shadow-vibrant: 0 4px 6px -1px rgba(220, 38, 38, 0.05);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[family-name:--color-bg-vibrant] text-[#1e293b];
+  }
+}
+
+@layer components {
+  .vibrant-card {
+    @apply bg-white rounded-[family-name:--radius-vibrant-card] border border-[family-name:--color-border-vibrant] shadow-[family-name:--shadow-vibrant];
+  }
+
+  .vibrant-table {
+    @apply w-full border-separate border-spacing-0 bg-white rounded-xl border border-[family-name:--color-border-vibrant] overflow-hidden;
+  }
+
+  .vibrant-btn-primary {
+    @apply bg-[#dc2626] text-white px-5 py-2.5 rounded-[family-name:--radius-vibrant-item] text-sm font-semibold hover:bg-[#b91c1c] transition-colors cursor-pointer;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
